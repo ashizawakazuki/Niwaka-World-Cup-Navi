@@ -1,0 +1,25 @@
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-box, .header-box, .footer-box{
+    max-width: 1024px;
+
+    margin: 0 auto;
+}
+
+.country-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.country-header img{
+    border: 1px solid black;
+}
+
+span{
+    font-size:16px;
+}
