@@ -4,12 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>{$title|default:"Niwaka World Cup Navi"}</title>
+    <link rel="stylesheet" href="../css/country-detail.css">
+    {block name="styles"}{/block}
 </head>
 <body>
+<header>
+<!--    決まった名前のファイルを持ってくるのはincludeを使う-->
+    {include file="header.html"}
+</header>
+
+<main>
+<!--    ここにページごとの内容を入れることができる(htnl側で)-->
 {block name="content"}
-
-
 {/block}
+</main>
 
+<footer>
+    {include file="footer.html"}
+</footer>
 </body>
 </html>
