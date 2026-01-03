@@ -9,5 +9,5 @@ $smarty->setTemplateDir(__DIR__ . '/templates');
 // コンパイルしたテンプレートを置く場所
 $smarty->setCompileDir(__DIR__ . '/templates_c');
 
-// index.tpl を表示
-$smarty->display('index.tpl');
+// index.htmlを表示
+$smarty->display('index.html');
