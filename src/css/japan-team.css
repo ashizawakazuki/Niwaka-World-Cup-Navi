@@ -1,0 +1,14 @@
+img{
+
+}
+
+h2{
+    background-color: #0f3278;
+    color: white;
+}
+
+.gk{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
