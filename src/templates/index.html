@@ -1,4 +1,20 @@
 {extends file='template.html'}
+{block name="styles"}
+<link rel="stylesheet" href="/css/index.css">
+{/block}
 {block name="content"}
-トップ画面
+<div class="main">
+    <div class="card">
+        <h1>Next Match</h1>
+        <img src="/national-flag/japan.png" alt="japan-flag" style="width:100px; border-color: black">
+        <p>日本対オランダ</p>
+    </div>
+    <h2>初心者はこちらから</h2>
+    <div class="top-pickup-list">
+        <a href="#" class="btn">最低限のルール</a>
+        <a href="#" class="btn">用語集</a>
+        <a href="#" class="btn">日程表</a>
+        <a href="#" class="btn">にわか度診断</a>
+    </div>
+</div>
 {/block}

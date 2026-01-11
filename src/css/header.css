@@ -1,0 +1,9 @@
+
+.header ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    list-style: none;
+    flex-direction: row;
+    gap: 30px;
+}
