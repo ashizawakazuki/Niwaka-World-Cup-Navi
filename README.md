@@ -62,4 +62,9 @@
 ・AI国比較（過去の分析から）<br>
 ・にわか検定（にてるかも<br>
 
+## 備考
+PCで見る時はヘッダーにリンクを置いているが、画面幅が狭まった（スマホ）時は、フッターに表示されるようにしたい<br>
+ウィズウェルネスのアプリのように
+https://www.withwellness.com/phr/top/?columnCount=2&medicalNoteTopViewedFlag=1
+
 
