@@ -12,13 +12,10 @@
 <!--    決まった名前のファイルを持ってくるのはincludeを使う-->
     {include file="header.html"}
 </header>
-
 <main>
 <!--    ここにページごとの内容を入れることができる(htnl側で)-->
-{block name="content"}
-{/block}
+    {include file=$filename}
 </main>
-
 <footer>
     {include file="footer.html"}
 </footer>
