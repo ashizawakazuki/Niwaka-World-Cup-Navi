@@ -1,5 +1,12 @@
 # Niwaka World Cup Navi – 開発ログ
 
+## 2026/01/21
+### smartyでtemplate.htmlを一回を通って表示するよう修正
+- 以下を作成・修正
+  - template.htmlに{include file=$filename}を記述
+  - japan-team.phpにassignとdisplayを記述
+  - country-detail.phpを作成
+- 
 ## 2026/01/11
 ### index.html（トップページを編集
 - 以下を作成
