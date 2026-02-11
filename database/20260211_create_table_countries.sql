@@ -1,0 +1,1 @@
+CREATE TABLE `niwaka`.`countries` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `fifa_rank` INT NOT NULL , `flag_image_path` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
