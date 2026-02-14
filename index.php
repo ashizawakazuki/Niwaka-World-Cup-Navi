@@ -1,6 +1,15 @@
 <?php
 //トップ画面（自動で設定されている）
+
+//いろんな設定ファイルを読み込んでいる
 require_once __DIR__ . '/inc/config.php';
+
+//データベースに関するファイルを読み込んでいる
+require_once __DIR__ . '/inc/dbconfig.php';
+
+//接続したいファイル（クラス）を読み込んでいる
+require_once("class/SingletonPDO.class.php");
+require_once("class/country/CountryRepository.php");
 
 
 //表示したファイルの読み込み
