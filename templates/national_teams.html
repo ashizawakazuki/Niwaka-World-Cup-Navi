@@ -1,1 +1,5 @@
-hoge
+<h1>参加国一覧</h1>
+
+{foreach $countries as $country}
+<a href="/index.php?action=country_detail&country_id={$country.id}">{$country.name}</a><br>
+{/foreach}
