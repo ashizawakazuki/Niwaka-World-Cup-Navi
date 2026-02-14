@@ -1,4 +1,37 @@
 # Niwaka World Cup Navi – 開発ログ
+次やること<br>
+SQLにプレイスホルダーつけてないから、つける<br>
+データベースに各国の情報を入れる<br>
+各国の一覧（national_teams.php）と詳細（country_detail.php）の画面の見た目を考える
+
+## 2026/02/14
+### 【学んだこと】
+- PDOはデータベースに接続するための窓口のようなもので、PHPがあらかじめ用意しているクラス（機能）
+→引数で①サーバー名とデータベース名、②DBのユーザー名、③DBのパスワード、④文字コードを渡す
+
+- SngletonPDOファイルは、PDOを生成するためのファイル。こいつがいないと、それぞれのDBと接続するファイルで毎回「$db = new PDO("mysql:host=db;dbname=niwaka", "user", "password");とかをしないといけない
+- 上記のデメリットとしては、毎回接続するので通信量が増えたり、修正が必要になったら、全部変えないといけない。
+- こいつを使えば、最初の1回接続すれば、あとはPDOを使いまわせる。
+
+- Repository（リポジトリ）は、データベースと操作する（SQLを書く）ためのファイル
+- 今回は「CountryRepository.php」ファイルを作成した
+
+### 【やったこと】
+### Docker の中の PHP に “MySQL と通信するための機能をDockerfileに記述（GPTに頼った）
+PDOでデータベースから取ってくることを試みたが、エラーが出て調べたら以下をやらなくちゃいけなくてやった
+- 以下を作成・修正
+    - 「RUN docker-php-ext-install pdo pdo_mysql」をDockerfileに記述
+    - 「docker compose down」 「docker compose build --no-cache」 「docker compose up -d」を実施
+### MySQLからデータをとってこれるようにファイルを作成
+- 以下を作成・修正
+    - 「SingletonPDO.class.php」を作成し、PDOをそこで作成できるように記述
+    - 「dbconfig.php」にPDOに投げるためのDSN（データベースの住所みたいなもの）の定数を記述
+    - 「index.php」に「dbconfig.php」を接続するように記述
+### CountryRepositoryっていうデータベースを操作する専用のファイルを作成
+- 以下を作成・記述
+    - 国を全部持ってくるメソッド（getCountry）と一つだけ持ってくるメソッド（getCountryDetail）を作成
+
+### index.phpにデータベースファイルに関する記述をした
 
 ## 2026/02/11
 ### docker-compose.ymlファイルに記述し、mySQLのデータベースサーバー(コンテナ)とphpmyadmin用のサーバー（コンテナ）を作成（GPTに完全に頼った）
