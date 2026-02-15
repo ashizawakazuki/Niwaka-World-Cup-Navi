@@ -68,4 +68,11 @@ PCで見る時はヘッダーにリンクを置いているが、画面幅が狭
 ウィズウェルネスのアプリのように
 https://www.withwellness.com/phr/top/?columnCount=2&medicalNoteTopViewedFlag=1
 
+### この記事でリアルタイムで結果が表示されるものが書いてある
+https://qiita.com/lamela/items/0016b89a0792bb0fc4f2
 
+### UI参考記事
+https://kohimoto.com/labo/web/design/9796/
+
+### UIツール
+https://edraw.wondershare.jp/flowchart/screen-transition-diagram.html
