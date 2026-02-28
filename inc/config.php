@@ -5,6 +5,9 @@
 //文字列演算子を使って、autoload.php（smartyに関するファイル）を読み込む
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../vendor/smarty/smarty/libs/Smarty.class.php';
+
+// 言語ファイルの読み込み
+require_once __DIR__ . '/../language/language_ja.php';
 //上記で読み込んだsmartyに関するファイルを実際に起動している
 $smarty = new Smarty\Smarty();   // ← ここが v5 の正式な書き方
 
