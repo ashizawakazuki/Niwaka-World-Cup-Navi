@@ -1,5 +1,11 @@
 {
     "require": {
         "smarty/smarty": "^5.7"
+    },
+  "autoload": {
+    "psr-4": {
+      "country\\": "class/country",
+      "class\\": "class/"
     }
+  }
 }
