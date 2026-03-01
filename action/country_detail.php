@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../inc/config.php';
+use country\CountryRepository;
 
 
 $hoge = $_GET['country_id'];
