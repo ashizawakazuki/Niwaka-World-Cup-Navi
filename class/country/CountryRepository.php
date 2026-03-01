@@ -1,7 +1,10 @@
 <?php
-require_once __DIR__ . '/../SingletonPDO.class.php';
+namespace country;
+//require_once __DIR__ . '/../SingletonPDO.class.php';
 
 //リポジトリファイルは、データベースを操作するためのSQLを書くためのファイル
+use class\SingletonPDO;
+
 class CountryRepository
 {
     public static function getCountry(){

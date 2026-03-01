@@ -1,6 +1,6 @@
 <?php
-
-class SingletonPDO extends PDO
+namespace class;
+class SingletonPDO extends \PDO
 {
     private static $dbh;
     private static $dsn=DATA_SOURCE_NAME;
