@@ -1,21 +1,18 @@
-
+<!--グループごとに４か国出すかきかたはAIが出したからわかんね-->
 <h1>参加国一覧</h1>
+{assign var=groups value=["GROUP_A","GROUP_B","GROUP_C","GROUP_D","GROUP_E","GROUP_F","GROUP_G","GROUP_H","GROUP_I","GROUP_J","GROUP_K","GROUP_L"]}
 
-{foreach $countries as $country}
-<a href="/index.php?action=country_detail&country_id={$country.id}">{$country.name}</a><br>
+{foreach $countries as $country name=loop}
+
+{if $smarty.foreach.loop.index % 4 == 0}
+<h2>{$smarty.const[$groups[$smarty.foreach.loop.index/4]]}</h2>
+{/if}
+
+<a href="/index.php?action=country_detail&country_id={$country->getId()}">
+    {$country->getName()}
+</a><br>
+<img src="/templates/images/national-flag/{$country->getFlagImagePath()}" alt="flag" height=240 width=360>
 {/foreach}
-<h2>{$smarty.const.GROUP_A}</h2>
-<h2>{$smarty.const.GROUP_B}</h2>
-<h2>{$smarty.const.GROUP_C}</h2>
-<h2>{$smarty.const.GROUP_D}</h2>
-<h2>{$smarty.const.GROUP_E}</h2>
-<h2>{$smarty.const.GROUP_F}</h2>
-<h2>{$smarty.const.GROUP_G}</h2>
-<h2>{$smarty.const.GROUP_H}</h2>
-<h2>{$smarty.const.GROUP_I}</h2>
-<h2>{$smarty.const.GROUP_J}</h2>
-<h2>{$smarty.const.GROUP_K}</h2>
-<h2>{$smarty.const.GROUP_L}</h2>
 
 
 
