@@ -9,9 +9,17 @@
         </div>
         <h2>GK</h2>
         <div class="gk">
-        <img src="images/national-flag/suzuki_zion.jpg" alt="鈴木彩艶">
-        <img src="images/national-flag/hayakawa_tomoki.jpg" alt="早川 友基 ">
-        <img src="images/national-flag/kokubo_leo_brian.jpg" alt="小久保">
+            {foreach $players as $player}
+            <p>{$player->getName()}</p>
+            <p>{$player->getNumber()}</p>
+            <p>{$player->getPosition()}</p>
+            <p>{$player->getClub()}</p>
+            <p>{$player->getAge()}</p>
+            <p>{$player->getHeight()}</p>
+            <p>{$player->getWeight()}</p>
+            <img src="/templates/images/japan-players/{$player->getImagePath()}" alt="{$player->getName()}" style="width:100px">
+            <video src = "{$player->getHighlightUrl()}" controls></video> //youtubeの動画はむりらしい
+            {/foreach}
         </div>
         <h2>DF</h2>
         <h2>MF/FW</h2>

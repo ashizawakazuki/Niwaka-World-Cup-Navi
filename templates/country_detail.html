@@ -1,11 +1,11 @@
-        <img src="/templates/images/national-flag/japan.png" alt="日本" height=240 width=360>
-        <h1>{$country.name}</h1>
+        <img src="/templates/images/national-flag/{$country->getFlagImagePath()}" alt="flag" height=240 width=360>
+        <h1>{$country->getName()}</h1>
         <h2>人口/地域/FIFAランキング<span>（世界ランキング）</span></h2>
-        <p>1億2065万人/アジア/18位</p>
+        <p>{$country->getPopulation()}/{$country->getRegion()}/{$country->getFifaRank()}</p>
         <h2>有名選手</h2>
-        <p>三笘 薫（みとま かおる）</p>
+        <p>{$country->getFamousPlayers()}</p>
         <h2>注目ポイント</h2>
-
+        <p>{$country->getHighlights()}</p>
         <h2>場所</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22802145.08751416!2d120.2013673676897!3d32.141037173433574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2z5pel5pys!5e1!3m2!1sja!2sjp!4v1766320097696!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
