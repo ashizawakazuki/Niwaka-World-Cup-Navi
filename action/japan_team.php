@@ -7,11 +7,11 @@ use class\player\PlayerRepository;
 try {
     $players = PlayerRepository::getJapanPlayer();
     if (empty($players)) {
-        throw new PDOException("データベース関係でエラーが出ています");
+        throw new Exception("データベース関係でエラーが出ています");
     }
 
     // Exceptionクラスのオブジェクトが$eに入っている、そしてそのオブジェクトのメソッドをつかってメッセージなどを出している
-} catch(PDOException $e) {
+} catch(Exception $e) {
     // よく使われるメソッド上位3つ（AIより）
     echo $e->getMessage()."<br>"; //エラーです
     echo $e->getFile()."<br>"; // /var/www/html/class/player/PlayerRepository.php
