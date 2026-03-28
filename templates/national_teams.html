@@ -1,18 +1,29 @@
 <!--グループごとに４か国出すかきかたはAIが出したからわかんね-->
-<h1>参加国一覧</h1>
+<h1 class="text_center">参加国一覧</h1>
 {assign var=groups value=["GROUP_A","GROUP_B","GROUP_C","GROUP_D","GROUP_E","GROUP_F","GROUP_G","GROUP_H","GROUP_I","GROUP_J","GROUP_K","GROUP_L"]}
+
 
 {foreach $countries as $country name=loop}
 
 {if $smarty.foreach.loop.index % 4 == 0}
-<h2>{$smarty.const[$groups[$smarty.foreach.loop.index/4]]}</h2>
+<h2 >{$smarty.const[$groups[$smarty.foreach.loop.index/4]]}</h2>
+<div class="flex">
 {/if}
-
-<a href="/index.php?action=country_detail&country_id={$country->getId()}">
-    {$country->getName()}
-</a><br>
-<img src="/templates/images/national-flag/{$country->getFlagImagePath()}" alt="flag" height=240 width=360>
+    <div class="item">
+        <div class="text_center">
+            <div style="padding-top: 4px;" class="bold">
+                {$country->getName()}
+            </div>
+            <a href="/index.php?action=country_detail&country_id={$country->getId()}" >
+                <img src="/templates/images/national-flag/{$country->getFlagImagePath()}" alt="flag" height=200 width=260>
+            </a>
+        </div>
+    </div>
+    {if $smarty.foreach.loop.index % 4 == 3}
+</div>
+{/if}
 {/foreach}
+
 
 
 
