@@ -20,6 +20,7 @@ class Country
     private ?string $famous_players;
     private ?string $highlights;
     private ?string $appearances;
+    private ?string $memo;
 
 
     public function __construct(
@@ -31,7 +32,8 @@ class Country
         ?string $region,
         ?string $famous_players,
         ?string $highlights,
-        ?string $appearances
+        ?string $appearances,
+        ?string $memo
     )
     {
 //オブジェクトを生成している途中に、オブジェクトのプロパティをセットしている
@@ -47,6 +49,7 @@ class Country
         $this->famous_players = $famous_players;
         $this->highlights = $highlights;
         $this->appearances = $appearances;
+        $this->memo = $memo;
     }
 
 //    ゲッター getではじめる
@@ -76,5 +79,8 @@ class Country
     }
     public function getAppearances(): ?string{
         return $this->appearances;
+    }
+    public function getMemo(): ?string{
+        return $this->memo;
     }
 }
