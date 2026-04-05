@@ -18,6 +18,10 @@ class Country
     private ?string $population;
     private ?string $region;
     private ?string $famous_players;
+    private ?string $famous_players_club;
+    private ?string $famous_players_link;
+    private ?string $famous_players_description;
+    private ?string $map;
     private ?string $highlights;
     private ?string $appearances;
     private ?string $memo;
@@ -31,6 +35,10 @@ class Country
         ?string $population,
         ?string $region,
         ?string $famous_players,
+        ?string $famous_players_club,
+        ?string $famous_players_link,
+        ?string $famous_players_description,
+        ?string $map,
         ?string $highlights,
         ?string $appearances,
         ?string $memo
@@ -47,6 +55,10 @@ class Country
         $this->population = $population;
         $this->region = $region;
         $this->famous_players = $famous_players;
+        $this->famous_players_club = $famous_players_club;
+        $this->famous_players_link = $famous_players_link;
+        $this->famous_players_description = $famous_players_description;
+        $this->map = $map;
         $this->highlights = $highlights;
         $this->appearances = $appearances;
         $this->memo = $memo;
@@ -73,6 +85,18 @@ class Country
     }
     public function getFamousPlayers(): ?string{
         return $this->famous_players;
+    }
+    public function getFamousPlayersClub(): ?string{
+        return $this->famous_players_club;
+    }
+    public function getFamousPlayersLink(): ?string{
+        return $this->famous_players_link;
+    }
+    public function getFamousPlayersDescription(): ?string{
+        return $this->famous_players_description;
+    }
+    public function getMap(): ?string{
+        return $this->map;
     }
     public function getHighlights(): ?string{
         return $this->highlights;
