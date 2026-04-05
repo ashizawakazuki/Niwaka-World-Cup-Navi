@@ -2,8 +2,26 @@
 次やること<br>
 SQLにプレイスホルダーつけてないから、つける<br>
 データベースに各国の情報を入れる（AとBグループはなんとなくいれた）<br>
-各国の一覧（national_teams.php）と詳細（country_detail.php）の画面の見た目を考える
-各国の一覧画面で、グループごとにデータベースから国の情報を持ってきて、表示する
+詳細画面（country_detail.php）で以下を整理（GPTに画像生成してもらったので、notionみる）
+・注目ポイントにbrつけて、もっとわかりやすい言葉で
+・有名選手の名前にwikpediaのリンクつける（その前にDBにURLいれないと）
+・有名選手の特徴をデータベースにいれる（入れてない国が多い）
+
+## 2026/03/22-4/5
+### 【やったこと】
+- グループリーグすべての国をデータベースに追加＆画像を追加
+- 用語集を仮で作成<br>
+- 各国の詳細画面をきれいにした<br>
+- pc.cssを追加<br>
+- 以下のカラムをcountryテーブルとcountryクラスに追加した 
+  - famous_players_club
+  - famous_players_link
+  - famous_players_description 
+  - map
+  - highlights
+  - appearances
+  - memo 
+
 
 
 ## 2026/03/13-22
