@@ -1,0 +1,75 @@
+.border {
+    background: #fff;
+    border-radius: 16px;        /* 角丸 */
+    border: 1px solid #e5e7eb;  /* 薄い枠線 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* 影 */
+    padding: 16px;
+}
+
+.left-alignment {
+    display: flex;
+    justify-content: left;
+    align-items: center
+}
+
+.max-width-800 {
+    max-width: 800px;
+}
+
+.flex-direction-row {
+    display:flex;
+    flex-direction: row;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.margin-top-and-bottom {
+    margin: 4px 0;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.margin-4px {
+    margin:4px;
+}
+
+.height-360px {
+    height:360px;
+}
+
+.height-200px {
+    height:200px;
+}
+
+.height-180px {
+    height:180px;
+}
+
+.margin-bottom-4px {
+    margin:4px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.text-color-green {
+    color: #4CAF50;
+}
+
+.gap-4px {
+    gap: 4px;
+}
+
+.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.font-size-24px {
+    font-size:24px;
+}
