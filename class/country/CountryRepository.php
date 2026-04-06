@@ -30,7 +30,7 @@ class CountryRepository
         }
     }
 
-    public static function getCountryDetail($country_id):?array {
+    public static function getCountryDetail($country_id):?Country {
         try{
             # PDOオブジェクトを持ってきて、$dbに入れている
             $db = SingletonPDO::connect();

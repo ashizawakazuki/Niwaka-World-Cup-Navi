@@ -1,3 +1,36 @@
 h2 {
     text-align: center;
 }
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: space-around;
+
+}
+
+.item {
+    width:22%;
+    background-color:#f0f0f0;
+}
+@media(max-width: 1239px){
+    .item {
+        width:48%;
+        background-color:#f0f0f0;
+    }
+}
+
+.text_center {
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+table th {
+    background-color:#f0f0f0;
+}
