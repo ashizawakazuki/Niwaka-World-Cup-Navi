@@ -1,12 +1,85 @@
-        <img src="/templates/images/national-flag/{$country->getFlagImagePath()}" alt="flag" height=240 width=360>
-        <h1>{$country->getName()}</h1>
-        <h2>人口/地域/FIFAランキング<span>（世界ランキング）</span></h2>
-        <p>{$country->getPopulation()}/{$country->getRegion()}/{$country->getFifaRank()}</p>
-        <h2>有名選手</h2>
-        <p>{$country->getFamousPlayers()}</p>
-        <h2>注目ポイント</h2>
-        <p>{$country->getHighlights()}</p>
-        <h2>場所</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22802145.08751416!2d120.2013673676897!3d32.141037173433574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2z5pel5pys!5e1!3m2!1sja!2sjp!4v1766320097696!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div style="max-width: 1600px; gap:16px;" class=" border left-alignment max-width-800 flex-direction-row margin-auto ">
+    <img src="/templates/images/national-flag/{$country->getFlagImagePath()}" alt="flag" height=240 width=360>
+    <h1>{$country->getName()}</h1>
+    <p>（出場回数：{$country->getAppearances()} 回）</p>
+</div>
+<div style="display:flex; flex-direction:row; max-width: 1600px;" class="margin-auto">
+
+    <div style="display:flex; flex-direction: column; width:100%; max-width: 800px;">
+        <div class="border max-width-800 margin-4px height-200px">
+            <div class="text-color-green gap-4px align-items-center">
+                <i class="fas fa-info-circle inline-block"></i>
+                <h2 class="text-left inline-block">基本情報</h2>
+            </div>
+            <div style="justify-content: space-around;" class="flex-direction-row">
+                <div style="text-align: center">
+                    <i class="fas fa-users font-size-24px text-color-green"></i>
+                    <p>人口</p>
+                    <h3>{$country->getPopulation()}</h3>
+                </div>
+                <div style="text-align: center">
+                    <i class="fas fa-globe font-size-24px text-color-green"></i>
+                    <p>地域</p>
+                    <h3>{$country->getRegion()}</h3>
+                </div>
+                <div style="text-align: center">
+                    <i class="fas fa-trophy font-size-24px text-color-green"></i>
+                    <p>世界ランキング</p>
+                    <h3>{$country->getFifaRank()}位/210位</h3>
+                </div>
+            </div>
+        </div>
+        <div style="height:600px;" class="border max-width-800 margin-4px">
+            <div class="text-color-green align-items-center gap-4px">
+                <i class="fas fa-map-marker-alt"></i><h2 class="text-left inline-block">場所</h2>
+            </div>
+            <iframe src="{$country->getMap()}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+    </div>
+
+
+    <div style="display:flex; flex-direction: column; width:100%; max-width: 800px;">
+        <div class="border max-width-800 margin-4px height-200px">
+            <div class="text-color-green align-items-center gap-4px">
+                <i class="fas fa-lightbulb"></i><h2 class="text-left inline-block">注目ポイント</h2>
+            </div>
+            {$country->getHighlights()}
+
+        </div>
+
+        <div class="border max-width-800 margin-4px height-360px">
+            <div class="text-color-green align-items-center gap-4px">
+                <i class="fas fa-star"></i>
+                <h2 class="text-left inline-block">有名選手</h2>
+            </div>
+            <div class="flex-direction-row">
+
+
+                <div>
+                    {$country->getFamousPlayers()}
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="border max-width-800 margin-4px height-200px">
+            <div class="text-color-green align-items-center gap-4px">
+                <i class="fas fa-pen"></i><h2 class="text-left inline-block">メモ</h2>
+            </div>
+            <form action="/index.php?action=confirm_country_detail&country_id={$country->getId()}" method="post" name="country-memo" style="display: flex; flex-direction: column;   gap: 10px;">
+                <textarea style="height:50px" cols="40" name="memo">{$country->getMemo()}</textarea>
+                <div style="text-align: right;">
+                    <input style=" width: 150px;" type="submit" value="確認画面へ">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 
