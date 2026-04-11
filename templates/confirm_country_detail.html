@@ -4,7 +4,7 @@
         {$memo}
     </div>
     <form method="post" action="/index.php?action=country_detail_db&country_id={$country->getId()}" name="country-memo">
-        <textarea name="memo" style="display:none;">{$memo}</textarea>
+        <input type="hidden" name="memo" value="{$memo}">
         <input type="submit" value="保存">
     </form>
 </div>
