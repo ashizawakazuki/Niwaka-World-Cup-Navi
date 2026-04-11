@@ -1,12 +1,20 @@
 # Niwaka World Cup Navi – 開発ログ
 次やること<br>
 SQLにプレイスホルダーつけてないから、つける<br>
-データベースに各国の情報を入れる（AとBグループはなんとなくいれた）<br>
 詳細画面（country_detail.php）で以下を整理（GPTに画像生成してもらったので、notionみる）
 ・注目ポイントにbrつけて、もっとわかりやすい言葉で
 ・有名選手の名前にwikpediaのリンクつける（その前にDBにURLいれないと）
 ・有名選手の特徴をデータベースにいれる（入れてない国が多い）
 
+## 2026/4/5-4/11
+### 【やったこと】
+- 各国詳細画面にメモ欄を作成し、データベースに保存できるように、以下のファイルを作成
+  - confilm_country_detail.html（確認画面）
+  - confilm_country_detail.html（確認画面のphp側）
+  - country_detail_db.html（保存した後の画面）
+  - country_detail_db.html（保存した後の画面のphp側）
+- ヘッダーにアイコンの設置
+- CountryRepository.phpにupdate及びsaveメソッドを追加
 
 ## 2026/4/6
 ### 【やったこと】

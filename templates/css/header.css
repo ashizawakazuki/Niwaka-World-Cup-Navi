@@ -7,3 +7,12 @@
     flex-direction: row;
     gap: 30px;
 }
+
+.header {
+    display: flex;
+    justify-content: left;
+    align-items: center}
+
+.right {
+    margin-left: auto;
+}
