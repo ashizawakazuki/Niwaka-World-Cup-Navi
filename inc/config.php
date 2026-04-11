@@ -8,6 +8,9 @@ require_once __DIR__ . '/../vendor/smarty/smarty/libs/Smarty.class.php';
 
 // 言語ファイルの読み込み
 require_once __DIR__ . '/../language/language_ja.php';
+// グローバルファンクションファイルの読み込み（どのファイルでも読み込む）
+require_once __DIR__ . '/../action/global_function.php';
+
 //上記で読み込んだsmartyに関するファイルを実際に起動している
 $smarty = new Smarty\Smarty();   // ← ここが v5 の正式な書き方
 

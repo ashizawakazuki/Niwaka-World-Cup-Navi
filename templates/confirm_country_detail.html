@@ -4,7 +4,8 @@
         {$memo}
     </div>
     <form method="post" action="/index.php?action=country_detail_db&country_id={$country->getId()}" name="country-memo">
-        <textarea name="memo" style="display:none;">{$memo}</textarea>
+<!--        なぜかescapeがないとエスケープされてない文字列（生の入力値）がつぎのがめんにいってしまうからかく（4/11）-->
+        <input type="hidden" name="memo" value="{$memo|escape}">　
         <input type="submit" value="保存">
     </form>
 </div>
