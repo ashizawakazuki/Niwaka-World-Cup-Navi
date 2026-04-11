@@ -3,8 +3,7 @@
 use country\CountryRepository;
 
 $country_id = $_GET['country_id'];
-$memo = $_POST['memo'];
-
+$memo = escape($_POST['memo']);
 //以下、確認画面で国の名前を表示するために書いている
 $country = CountryRepository::getCountryDetail($country_id);
 $country_name = $country->getname();
