@@ -1,18 +1,9 @@
 <?php
 namespace class;
-class SingletonPDO extends \PDO
+class SingletonPDO
 {
     private static $dbh;
     private static $dsn=DATA_SOURCE_NAME;
-
-
-    public function __construct()
-    {
-//    ・このparentをつけることで親のクラス（PDO）のコンストラクタを実行できる。
-//    →引数で①DCN（どこに接続するか）、②データベース接続するためのユーザーネーム、③データベース接続するためのパスワード
-//    ・selfはこのクラス（設計図）自身を指している
-        parent::__construct(self::$dsn, DB_USER, DB_PASSWORD);
-    }
 
     public static function connect()
     {
@@ -21,7 +12,7 @@ class SingletonPDO extends \PDO
 //      DBに接続できなさそうだったらcatchしてエラーを出す
         try {
             if (!isset(self::$dbh)) {
-            self::$dbh = new SingletonPDO();
+            self::$dbh = new \PDO(self::$dsn, DB_USER, DB_PASSWORD);
             }
             return self::$dbh;
         } catch (\PDOException $e) {
