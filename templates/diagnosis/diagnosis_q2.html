@@ -1,8 +1,10 @@
-<h1>Q2 休日の過ごし方は</h1>
+<h1 class="text_center">Q2 休日の過ごし方は</h1>
 
 <!--nameのanswerをキー、valueのアルファベットを値として、ユーザーの回答を$_POSTにいれている-->
 <form action="/index.php?action=diagnosis/diagnosis_q3" method="post">
-    <button name="answer" value="A">外でアクティブに過ごす</button>
-    <button name="answer" value="B">予定を立てて楽しむ</button>
-    <button name="answer" value="C">家でゆっくり過ごす</button>
+    <div class="text_center flex-direction-column gap-4px">
+        <button class="width-400 font-size-24px" name="answer" value="A">外でアクティブに過ごす</button>
+        <button class="width-400 font-size-24px" name="answer" value="B">予定を立てて楽しむ</button>
+        <button class="width-400 font-size-24px" name="answer" value="C">家でゆっくり過ごす</button>
+    </div>
 </form>

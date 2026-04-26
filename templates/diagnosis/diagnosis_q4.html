@@ -1,8 +1,10 @@
-<h1>Q4　チームでの立ち位置は？</h1>
+<h1 class="text_center">Q4　チームでの立ち位置は？</h1>
 
 <!--nameのanswerをキー、valueのアルファベットを値として、ユーザーの回答を$_POSTにいれている-->
 <form action="/index.php?action=diagnosis/diagnosis_q5" method="post">
-    <button name="answer" value="A">引っ張るタイプ</button>
-    <button name="answer" value="B">バランスを取るタイプ</button>
-    <button name="answer" value="C">支えるタイプ</button>
+    <div class="text_center flex-direction-column gap-4px">
+        <button class="width-400 font-size-24px" name="answer" value="A">引っ張るタイプ</button>
+        <button class="width-400 font-size-24px" name="answer" value="B">バランスを取るタイプ</button>
+        <button class="width-400 font-size-24px" name="answer" value="C">支えるタイプ</button>
+    </div>
 </form>

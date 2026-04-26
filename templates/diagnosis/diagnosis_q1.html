@@ -1,8 +1,10 @@
-<h1>Q1 あなたの性格は？</h1>
+<h1 class="text_center">Q1 あなたの性格は？</h1>
 
 <!--nameのanswerをキー、valueのアルファベットを値として、ユーザーの回答を$_POSTにいれている-->
 <form action="/index.php?action=diagnosis/diagnosis_q2" method="post">
-    <button name="answer" value="A">ノリ重視・勢いタイプ</button>
-    <button name="answer" value="B">状況を見て動くタイプ</button>
-    <button name="answer" value="C">慎重派・できるだけミスは避けたい</button>
+    <div class="text_center flex-direction-column gap-4px">
+        <button class="width-400 font-size-24px" name="answer" value="A">ノリ重視・勢いタイプ</button>
+        <button class="width-400 font-size-24px" name="answer" value="B">状況を見て動くタイプ</button>
+        <button class="width-400 font-size-24px" name="answer" value="C">慎重派・できるだけミスは避けたい</button>
+    </div>
 </form>
