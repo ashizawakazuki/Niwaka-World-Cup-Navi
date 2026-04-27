@@ -1,9 +1,9 @@
 <?php
-// ファイル名: ai_match_prediction_result.php
-require_once __DIR__ . '/../inc/env.php';
 
-if (!isset($apiKey)) {
-    $apiKey = getenv('OPENAI_API_KEY');
+$apiKey = getenv('OPENAI_API_KEY');
+
+if (!$apiKey && file_exists(__DIR__ . '/../inc/env.php')) {
+    require_once __DIR__ . '/../inc/env.php';
 }
 
 if ($apiKey === false || $apiKey === '') {
