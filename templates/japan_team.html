@@ -1,27 +1,27 @@
 {block name="styles"}
 <link rel="stylesheet" href="css/country_detail.css">
 {/block}
+<h1>日本代表のメンバーは5/15発表になります</h1>
 
-
-    <div class="main-box">
-        <div class="country-header">
-            <h1>日本代表選手</h1>
-        </div>
-        <h2>GK</h2>
-        <div class="gk">
-            {foreach $players as $player}
-            <p>{$player->getName()}</p>
-            <p>{$player->getNumber()}</p>
-            <p>{$player->getPosition()}</p>
-            <p>{$player->getClub()}</p>
-            <p>{$player->getAge()}</p>
-            <p>{$player->getHeight()}</p>
-            <p>{$player->getWeight()}</p>
-            <img src="/templates/images/japan-players/{$player->getImagePath()}" alt="{$player->getName()}" style="width:100px">
-            <video src = "{$player->getHighlightUrl()}" controls></video> //youtubeの動画はむりらしい
-            {/foreach}
-        </div>
-        <h2>DF</h2>
-        <h2>MF/FW</h2>
-    </div>
+<!--    <div class="main-box">-->
+<!--        <div class="country-header">-->
+<!--            <h1>日本代表選手</h1>-->
+<!--        </div>-->
+<!--        <h2>GK</h2>-->
+<!--        <div class="gk">-->
+<!--            {foreach $players as $player}-->
+<!--            <p>{$player->getName()}</p>-->
+<!--            <p>{$player->getNumber()}</p>-->
+<!--            <p>{$player->getPosition()}</p>-->
+<!--            <p>{$player->getClub()}</p>-->
+<!--            <p>{$player->getAge()}</p>-->
+<!--            <p>{$player->getHeight()}</p>-->
+<!--            <p>{$player->getWeight()}</p>-->
+<!--            <img src="/templates/images/japan-players/{$player->getImagePath()}" alt="{$player->getName()}" style="width:100px">-->
+<!--            <video src = "{$player->getHighlightUrl()}" controls></video>-->
+<!--            {/foreach}-->
+<!--        </div>-->
+<!--        <h2>DF</h2>-->
+<!--        <h2>MF/FW</h2>-->
+<!--    </div>-->
 

@@ -1,0 +1,16 @@
+<div class="text_center">
+  <h1>AI勝敗予想</h1>
+  <h2>日本 vs {$opponent|escape}</h2>
+  <p>試合日：{$date|escape}</p>
+  <p>時間：{$time|escape}</p>
+</div>
+
+<div style="max-width: 1200px;" class="margin-auto justify-content-center">
+  <div style="max-width: 600px;" class="card margin-4px text-left">
+    <div style="white-space: pre-line;">
+      {$predictionText|escape}
+    </div>
+    <a href="match_schedule.php">日程表に戻る</a>
+  </div>
+
+</div>

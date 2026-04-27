@@ -1,8 +1,10 @@
-<h1>Q5 勝負ごとのスタイルは？</h1>
+<h1 class="text_center">Q5 勝負ごとのスタイルは？</h1>
 
 <!--nameのanswerをキー、valueのアルファベットを値として、ユーザーの回答を$_POSTにいれている-->
 <form action="/index.php?action=diagnosis/diagnosis_result" method="post">
-    <button name="answer" value="A">とにかく攻めたい</button>
-    <button name="answer" value="B">様子見しながら進めたい</button>
-    <button name="answer" value="C">確実にミスなくいきたい</button>
+    <div class="text_center flex-direction-column gap-4px">
+        <button class="width-400 font-size-24px" name="answer" value="A">とにかく攻めたい</button>
+        <button class="width-400 font-size-24px" name="answer" value="B">様子見しながら進めたい</button>
+        <button class="width-400 font-size-24px" name="answer" value="C">確実にミスなくいきたい</button>
+    </div>
 </form>

@@ -1,0 +1,39 @@
+<div class="text_center">
+    <h1>日本戦 グループリーグ日程表</h1>
+</div>
+
+<div style="max-width: 1200px;" class="margin-auto">
+    {foreach from=$matches item=match}
+    <div style="max-width:1200px; margin:20px;" class="card">
+        <div class="flex-direction-row">
+            <h2>第{$match.id}戦</h2>
+        </div>
+        <div style="gap:20px;" class="flex-direction-row gap-4px justify-content-center">
+            <div style="margin-left: 60px;" class="justify-content-center">
+                <div class="align-items-center">
+                    <img src="templates/images/national-flag/{$match.japan_flag}" alt="japan-flag" style="width:100px; border-color: black; margin-right: 10px;">
+                    <h3>{$match.japan|escape} × {$match.opponent|escape}</h3>
+                    <img src="templates/images/national-flag/{$match.opponent_country_flag}" alt="opponent-country-flag" style="width:100px; border-color: black; margin-left: 10px;">
+                </div>
+            </div>
+            <div style="text-align:left;">
+                <p>試合日：{$match.date|escape}</p>
+                <p>時間：{$match.time|escape}</p>
+            </div>
+            <div style="padding-top: 20px" class="align-items-center">
+                <form method="post" action="index.php?action=ai_match_prediction_result">
+                    <input type="hidden" name="match_id" value="{$match.id|escape}">
+                    <input type="hidden" name="opponent" value="{$match.opponent|escape}">
+                    <input type="hidden" name="date" value="{$match.date|escape}">
+                    <input type="hidden" name="time" value="{$match.time|escape}">
+
+                    <button type="submit">
+                        AIで結果を予想する
+                    </button>
+                    <p>※5秒ほどかかります</p>
+                </form>
+            </div>
+        </div>
+    </div>
+    {/foreach}
+</div>
