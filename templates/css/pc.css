@@ -6,14 +6,54 @@
     padding: 16px;
 }
 
+table, th, td {
+    border: 1px solid #d0d7de;
+    border-collapse: collapse;
+}
+
+#no-border {
+    border:none;
+}
+
+#no-border th {
+    border:none;
+}
+
+#no-border td {
+    border:none;
+}
+
 .left-alignment {
     display: flex;
     justify-content: left;
     align-items: center
 }
 
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-direction-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-content {
+    display: flex;
+    justify-content: center;
+}
+
+.margin_auto {
+    margin: 20px auto
+}
+
 .max-width-800 {
     max-width: 800px;
+}
+
+.width-400 {
+    width: 400px;
 }
 
 .flex-direction-row {
@@ -65,6 +105,22 @@
     gap: 4px;
 }
 
+.gap-16px {
+    gap: 16px;
+}
+
+.padding-20px {
+    padding:20px;
+}
+
+.width-100px {
+    width:100px;
+}
+
+.text-align-center {
+    text-align:center
+}
+
 .align-items-center {
     display: flex;
     align-items: center;
@@ -72,6 +128,23 @@
 
 .font-size-24px {
     font-size:24px;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+    color: #000000;
+}
+
+.world-cup-about-title {
+    border: navy solid ;
+    border-radius: 30px;
+    padding: 10px 20px 10px 20px;
+    background-color: navy;
+    color: white;
+}
+
+.card ul li {
+    font-size:x-large;
 }
 
 .mb-0 {
@@ -89,3 +162,59 @@
 .pt-0 {
     padding-top: 0;
 }
+
+.kana{
+    margin:24px 0 10px;
+    padding-left:10px;
+    border-left:4px solid #1e90ff;
+    font-size:1.2rem;
+    text-align: left;
+}
+
+.title{
+    font-weight:700;
+    letter-spacing:2px;
+    padding:20px 0;
+}
+
+
+/* 全体 */
+body {
+    background: #f5f7fb;
+    font-family: sans-serif;
+}
+
+/* カード風 */
+details {
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+/* ホバーでちょっと浮く */
+details:hover {
+    transform: translateY(-2px);
+}
+
+/* タイトル部分 */
+summary {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* 説明 */
+details p {
+    margin-top: 10px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* タイトル中央 */
+.text_center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+

@@ -23,6 +23,7 @@ class Country
     private ?string $famous_players_description;
     private ?string $map;
     private ?string $highlights;
+    private ?string $youtube_link;
     private ?string $appearances;
     private ?string $memo;
 
@@ -40,6 +41,7 @@ class Country
         ?string $famous_players_description,
         ?string $map,
         ?string $highlights,
+        ?string $youtube_link,
         ?string $appearances,
         ?string $memo
     )
@@ -60,6 +62,7 @@ class Country
         $this->famous_players_description = $famous_players_description;
         $this->map = $map;
         $this->highlights = $highlights;
+        $this->youtube_link = $youtube_link;
         $this->appearances = $appearances;
         $this->memo = $memo;
     }
@@ -100,6 +103,9 @@ class Country
     }
     public function getHighlights(): ?string{
         return $this->highlights;
+    }
+    public function getYoutubeLink(): ?string{
+        return $this->youtube_link;
     }
     public function getAppearances(): ?string{
         return $this->appearances;

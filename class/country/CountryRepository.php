@@ -21,7 +21,7 @@ class CountryRepository
     //        取り出す件数が複数あるときはfetchall
             $rows = $stmt->fetchAll();
             foreach($rows as $row){
-                $country = new Country($row['id'],$row['name'],$row['fifa_rank'],$row['flag_image_path'],$row['population'], $row['region'], $row['famous_players'],$row['famous_players_club'],$row['famous_players_link'],$row['famous_players_description'],$row['map'],$row['highlights'],$row['appearances'],$row['memo']);
+                $country = new Country($row['id'],$row['name'],$row['fifa_rank'],$row['flag_image_path'],$row['population'], $row['region'], $row['famous_players'],$row['famous_players_club'],$row['famous_players_link'],$row['famous_players_description'],$row['map'],$row['highlights'],$row['youtube_link'],$row['appearances'],$row['memo']);
                 $countries[] = $country;
             }
             return $countries;
@@ -42,7 +42,7 @@ class CountryRepository
     //        1件だけ取り出すときはfetch（配列として取り出す）
             $row = $stmt->fetch();
     //        そのまま配列ではなくオブジェクトにするために、いったんcountryクラスに入れる。返ってきたオブジェクトを返す
-            $country = new Country($row['id'],$row['name'],$row['fifa_rank'],$row['flag_image_path'],$row['population'], $row['region'], $row['famous_players'],$row['famous_players_club'],$row['famous_players_link'],$row['famous_players_description'],$row['map'],$row['highlights'],$row['appearances'],$row['memo']);
+            $country = new Country($row['id'],$row['name'],$row['fifa_rank'],$row['flag_image_path'],$row['population'], $row['region'], $row['famous_players'],$row['famous_players_club'],$row['famous_players_link'],$row['famous_players_description'],$row['map'],$row['highlights'],$row['youtube_link'],$row['appearances'],$row['memo']);
             return $country;
         } catch(PDOException $e){
             error_log($e->getMessage());
@@ -81,5 +81,23 @@ class CountryRepository
             ];
             $stmt = $db->prepare($sql);
             $stmt->execute($params);
+    }
+    public static function getCountryByName(string $name):?Country {
+        try{
+            # PDOオブジェクトを持ってきて、$dbに入れている
+            $db = SingletonPDO::connect();
+
+            $sql = "SELECT * FROM countries WHERE  name = :name";
+            $stmt = $db->prepare($sql);
+            $stmt->execute([':name' => $name]);
+            //        1件だけ取り出すときはfetch（配列として取り出す）
+            $row = $stmt->fetch();
+            //        そのまま配列ではなくオブジェクトにするために、いったんcountryクラスに入れる。返ってきたオブジェクトを返す
+            $country = new Country($row['id'],$row['name'],$row['fifa_rank'],$row['flag_image_path'],$row['population'], $row['region'], $row['famous_players'],$row['famous_players_club'],$row['famous_players_link'],$row['famous_players_description'],$row['map'],$row['highlights'],$row['youtube_link'],$row['appearances'],$row['memo']);
+            return $country;
+        } catch(PDOException $e){
+            error_log($e->getMessage());
+            return null;
+        }
     }
 }
