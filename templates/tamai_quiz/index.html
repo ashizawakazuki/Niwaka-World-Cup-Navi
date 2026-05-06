@@ -3,41 +3,20 @@
         <div class="tape"></div>
         <div class="paper-clip"></div>
 
-        <p class="quiz-label">Tamai Junior High Quiz</p>
+        <p class="quiz-label">Tamai Junior High School Quiz</p>
 
         <h1 class="quiz-title">玉井中クイズ</h1>
 
         <p class="quiz-subtitle">
-            あの頃の記憶、どれくらい残ってる？
+            全5問<br>あの頃の記憶、どれくらい残ってる？
         </p>
 
         <div class="school-illustration">
             🏫
         </div>
 
-        <form action="/index.php?action=/tamai_quiz/question" method="post" class="quiz-form">
-            <div class="form-box">
-                <label for="name" class="form-label">
-                    ニックネーム
-                </label>
-
-                <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="例）たまちゅう太郎"
-                        required
-                >
-
-                <p class="form-note">
-                    ※ニックネームは、あとでランキングに載せるを選んだ場合だけ使われます。<br>
-                    ランキングに載せない場合は、ランキングには表示されません。
-                </p>
-            </div>
-
-            <button type="submit" class="start-button">
-                クイズを始める！
-            </button>
-        </form>
+        <a href="/index.php?action=/tamai_quiz/question" class="start-button start-link">
+            クイズを始める！
+        </a>
     </section>
 </main>
