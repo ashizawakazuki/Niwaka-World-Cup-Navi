@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<main class="quiz-page">
+    <section class="quiz-card">
+        <div class="tape"></div>
+        <div class="paper-clip"></div>
 
-</body>
-</html>
+        <p class="quiz-label">
+            {$question_number}問目 / {$total_question_count}問
+        </p>
+
+        <p class="quiz-subtitle">
+            {$question.question|escape|nl2br nofilter}
+        </p>
+
+        {if !empty($question.image)}
+        <img
+                src="{$question.image|escape}"
+                alt="問題画像"
+                class="memory-image"
+                style="width:400px; margin: 10px"
+        >
+        {/if}
+
+        <form action="/index.php?action=/tamai_quiz/answer" method="post" class="quiz-form">
+            {if $question.type === 'choice'}
+            <div class="choice-list">
+                {foreach from=$question.choices item=choice}
+                <label class="choice-item">
+                    <input
+                            type="radio"
+                            name="answer"
+                            value="{$choice|escape}"
+                            required
+                    >
+                    <span>{$choice|escape}</span>
+                </label>
+                {/foreach}
+            </div>
+            {/if}
+
+            {if $question.type === 'text'}
+
+
+            <label for="answer" class="form-label">
+                答えを入力してください
+            </label>
+
+            <input
+                    type="text"
+                    id="answer"
+                    name="answer"
+                    required
+            >
+            {/if}
+
+            <button type="submit" style="margin-top: 16px;" class="start-button">
+                回答する
+            </button>
+        </form>
+    </section>
+</main>
