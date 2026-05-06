@@ -5,7 +5,7 @@ session_start();
 $questions = [
     [
         'type' => 'choice',
-        'question' => 'おぎの先生の本名は？',
+        'question' => 'おぎの先生のなまえは？',
         'choices' => ['おぎのたいき', 'おぎのだいき', 'おぎのまさき'],
         'answer' => 'おぎのだいき',
     ],
