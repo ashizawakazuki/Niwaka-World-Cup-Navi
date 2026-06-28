@@ -14,6 +14,7 @@ try{
     echo $e->getMessage();
     exit;
 }
+$_SESSION['name'] = $country->getName();
 
 $smarty->assign('filename', 'country_detail.html');
 $smarty->assign('country', $country);
