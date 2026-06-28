@@ -49,12 +49,12 @@
 
         </div>
 
-        <div style="height:600px;" class="border max-width-800 margin-4px height-360px">
+        <div style="height:350px;" class=" border max-width-800 margin-4px height-360px">
             <div class="text-color-green align-items-center gap-4px">
                 <i class="fas fa-star"></i>
                 <h2 class="text-left inline-block">有名選手</h2>
             </div>
-            <div style="gap: 20px;" class="flex-direction-column">
+            <div style="gap: 20px;" class=" flex-direction-row">
                 <div class="max-width-800">
                     <h3><a href="{$country->getFamousPlayersLink()}">{$country->getFamousPlayers()}</a></h3>
                     {$country->getFamousPlayersDescription()}
@@ -68,17 +68,17 @@
 
 
 <!--ログイン機能実装後復活させる 4/29-->
-<!--        <div class="border max-width-800 margin-4px height-200px">-->
-<!--            <div class="text-color-green align-items-center gap-4px">-->
-<!--                <i class="fas fa-pen"></i><h2 class="text-left inline-block">メモ</h2>-->
-<!--            </div>-->
-<!--            <form action="/index.php?action=confirm_country_detail&country_id={$country->getId()}" method="post" name="country-memo" style="display: flex; flex-direction: column;   gap: 10px;">-->
-<!--                <textarea style="height:50px" cols="40" name="memo">{$country->getMemo()}</textarea>-->
-<!--                <div style="text-align: right;">-->
-<!--                    <input style=" width: 150px;" type="submit" value="確認画面へ">-->
-<!--                </div>-->
-<!--            </form>-->
-<!--        </div>-->
+        <div class="border max-width-800 margin-4px height-200px">
+            <div class="text-color-green align-items-center gap-4px">
+                <i class="fas fa-pen"></i><h2 class="text-left inline-block">メモ</h2>
+            </div>
+            <form action="/index.php?action=confirm_country_detail&country_id={$country->getId()}" method="post" name="country-memo" style="display: flex; flex-direction: column;   gap: 10px;">
+                <textarea style="height:50px" cols="40" name="memo">{$country->getMemo()}</textarea>
+                <div style="text-align: right;">
+                    <input style=" width: 150px;" type="submit" value="確認画面へ">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
