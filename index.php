@@ -18,6 +18,8 @@ if(isset($_GET['action'])){
     $action = $_GET['action'];
 }
 
+// $_SESSIONをどのページでも使えるように毎回読み込むこのファイルに書く
+session_start();
 
 if(!empty($action)){
     require_once("action/$action.php");
