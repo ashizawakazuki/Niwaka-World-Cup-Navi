@@ -60,19 +60,52 @@ class CountryRepository
         }
     }
 
-    /**
-     * @throws Exception
-     */
-    // データベースエラーが出たらsaveの呼び出し元のExceptionにエラー文をスローする
-    // 新しくレコードを追加するわけではなく、すでにあるレコードのメモ欄に追加（更新）するのでupdateのみ
-    public function save(string $country_id, string $country_memo): void {
-        try {
-            $this->update($country_id,$country_memo);
-        } catch (PDOException $e) {
-            error_log($e->getMessage());
-            throw new Exception("データベースエラーです。開発者に連絡してください");
-        }
+
+    // 6/28　upsert作ったのでコメントアウト
+//    /**
+//     * @throws Exception
+//     */
+//    // データベースエラーが出たらsaveの呼び出し元のExceptionにエラー文をスローする
+//    // 新しくレコードを追加するわけではなく、すでにあるレコードのメモ欄に追加（更新）するのでupdateのみ
+//    public function save(string $country_id, string $country_memo): void {
+//        try {
+//            $this->update($country_id,$country_memo);
+//        } catch (PDOException $e) {
+//            error_log($e->getMessage());
+//            throw new Exception("データベースエラーです。開発者に連絡してください");
+//        }
+//    }
+
+
+    public function upsert(string $id, string $name, string $memo): void {
+        $db = SingletonPDO::connect();
+        $sql = '
+        INSERT INTO
+            countries (
+                id,
+               name,
+                memo
+            )
+        VALUES
+            (
+             :id,
+             :name,
+            :memo
+            )
+        ON DUPLICATE KEY UPDATE
+            memo = :update_memo
+        ';
+        $param = [
+            'id' => $id,
+            'name' => $name,
+            'memo' => $memo,
+            'update_memo' => $memo,
+        ];
+        $stmt = $db->prepare($sql);
+        $stmt->execute($param);
     }
+
+
 
     /**
      * 国のIDでメモを取得
@@ -80,25 +113,25 @@ class CountryRepository
      * @param string $memo 国の詳細のメモ
      * @return void 何も返さない
      */
-
-    public function update(int $country_id,string $memo): void {
-
-            $db = SingletonPDO::connect();
-            $sql = "
-            UPDATE
-                countries
-            SET 
-                memo = :memo
-            WHERE
-                id = :id
-            ";
-            $params = [
-                ':id' => $country_id,
-                ':memo' => $memo
-            ];
-            $stmt = $db->prepare($sql);
-            $stmt->execute($params);
-    }
+// 6/28　upsert作ったのでコメントアウト
+//    public function update(int $country_id,string $memo): void {
+//
+//            $db = SingletonPDO::connect();
+//            $sql = "
+//            UPDATE
+//                countries
+//            SET
+//                memo = :memo
+//            WHERE
+//                id = :id
+//            ";
+//            $params = [
+//                ':id' => $country_id,
+//                ':memo' => $memo
+//            ];
+//            $stmt = $db->prepare($sql);
+//            $stmt->execute($params);
+//    }
 
     /**
      * 国の名前で国のオブジェクトを取得
