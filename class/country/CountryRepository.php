@@ -75,14 +75,7 @@ class CountryRepository
 //            throw new Exception("データベースエラーです。開発者に連絡してください");
 //        }
 //    }
-    /**
-     * 国のIDでメモを取得
-     * @param int $country_id 国のID
-     * @param string $memo 国の詳細のメモ
-     * @return void 何も返さない
-     */
 
-    public function update(int $country_id,string $memo): void {
 
     public function upsert(string $id, string $name, string $memo): void {
         $db = SingletonPDO::connect();
@@ -112,8 +105,16 @@ class CountryRepository
         $stmt->execute($param);
     }
 
-    // 6/28　upsert作ったのでコメントアウト
-//    public function update($country_id,$memo): void {
+
+
+    /**
+     * 国のIDでメモを取得
+     * @param int $country_id 国のID
+     * @param string $memo 国の詳細のメモ
+     * @return void 何も返さない
+     */
+// 6/28　upsert作ったのでコメントアウト
+//    public function update(int $country_id,string $memo): void {
 //
 //            $db = SingletonPDO::connect();
 //            $sql = "
