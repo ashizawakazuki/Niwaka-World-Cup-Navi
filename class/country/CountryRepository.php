@@ -10,6 +10,10 @@ use PDOException;
 
 class CountryRepository
 {
+    /**
+     * すべての国を取得する
+     * @return array|null すべての国を返す。
+     */
     public static function getCountry():?array {
         try{
             # PDOオブジェクトを持ってきて、$dbに入れている
@@ -31,7 +35,13 @@ class CountryRepository
         }
     }
 
-    public static function getCountryDetail($country_id):?Country {
+    /**
+     * 国のIDで詳細を取得する
+     * @param int $country_id 国のID
+     * @return Country|null 国のオブジェクトを返す
+     */
+
+    public static function getCountryDetail(int $country_id):?Country {
         try{
             # PDOオブジェクトを持ってきて、$dbに入れている
             $db = SingletonPDO::connect();
@@ -65,6 +75,14 @@ class CountryRepository
 //            throw new Exception("データベースエラーです。開発者に連絡してください");
 //        }
 //    }
+    /**
+     * 国のIDでメモを取得
+     * @param int $country_id 国のID
+     * @param string $memo 国の詳細のメモ
+     * @return void 何も返さない
+     */
+
+    public function update(int $country_id,string $memo): void {
 
     public function upsert(string $id, string $name, string $memo): void {
         $db = SingletonPDO::connect();
@@ -113,6 +131,13 @@ class CountryRepository
 //            $stmt = $db->prepare($sql);
 //            $stmt->execute($params);
 //    }
+
+    /**
+     * 国の名前で国のオブジェクトを取得
+     * @param string $name 国のメモ
+     * @return Country|null 国のオブジェクトを返す
+     */
+
     public static function getCountryByName(string $name):?Country {
         try{
             # PDOオブジェクトを持ってきて、$dbに入れている

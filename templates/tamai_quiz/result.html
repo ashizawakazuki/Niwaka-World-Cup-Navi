@@ -1,0 +1,60 @@
+<main class="quiz-page">
+    <section class="quiz-card">
+        <div class="tape"></div>
+        <div class="paper-clip"></div>
+
+        <p class="quiz-label">
+            結果発表
+        </p>
+
+        <h1 class="quiz-title">
+            {$score_point}点
+        </h1>
+
+        <p class="result-text">
+            {$total_question_count}問中 {$score}問 正解でした！
+        </p>
+
+        {if $score_point >= 80}
+        <p class="result-message">
+            玉井中の記憶、かなり残ってます！
+        </p>
+        {elseif $score_point >= 60}
+        <p class="result-message">
+            けっこう覚えてます。いい感じです！
+        </p>
+        {else}
+        <p class="result-message">
+            ちょっと忘れてるね、、、卒アル見て思いだそ！
+        </p>
+        {/if}
+
+
+        <div class="dm-box">
+            <p class="dm-title">
+                結果を教えてください！
+            </p>
+
+            <p class="dm-text">
+                せっかく作ったので、、、<br>
+                何点だったかメッセージで教えてくれると嬉しいです。<br>
+                また、「この問題なつかしい」<br>
+                「ここ直した方がいい」<br>
+            みたいな感想・フィードバックなんでも送ってください！<br>
+                （仕事柄、ユーザーの貴重な意見を必要としてます笑）
+            </p>
+
+            <a
+                    href="https://www.instagram.com/ak19970620?igsh=MWs1cnpqdG15MDU1OA%3D%3D&utm_source=qr"
+                    target="_blank"
+                    class="dm-button"
+            >
+                Instagramで感想送る<br>
+                <small>(あしざわのインスタに遷移します)</small>
+            </a>
+        </div>
+        <a href="/index.php?action=/tamai_quiz/index" class="retry-button">
+            もう一回遊ぶ
+        </a>
+    </section>
+</main>
